@@ -32,8 +32,8 @@ CFLAGS ?= -std=c99 -Os -pipe \
 LDFLAGS ?= -Wl,-Os -pie
 
 # libraries
-CFLAGS += $(shell $(PKG_CONFIG) --cflags x11) -lm
-LDLIBS += $(shell $(PKG_CONFIG) --libs   x11) -lm
+CFLAGS += $(shell $(PKG_CONFIG) --cflags x11) -lXpm -lXext
+LDLIBS += $(shell $(PKG_CONFIG) --libs   x11) -lXpm -lXext
 
 .PHONY: all clean install uninstall clangd
 .SUFFIXES:
